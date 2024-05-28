@@ -78,4 +78,18 @@ INSERT INTO Compras (id_cliente, fecha_compra, total) VALUES (11, '2024-05-25', 
 INSERT INTO Compras (id_cliente, fecha_compra, total) VALUES (12, '2024-05-25', 0.00);
 
 
-
+INSERT INTO Comic_Compras (cantida, id_compra, id_comic) VALUES (1, 130, 40);
+INSERT INTO Comic_Compras (cantida, id_compra, id_comic) VALUES (1, 133, 42);
+INSERT INTO Comic_Compras (cantida, id_compra, id_comic) VALUES (1, 136, 44);
+INSERT INTO Comic_Compras (cantida, id_compra, id_comic) VALUES (1, 139, 46);
+INSERT INTO Comic_Compras (cantida, id_compra, id_comic) VALUES (1, 142, 48);
+INSERT INTO Comic_Compras (cantida, id_compra, id_comic) VALUES (1, 145, 50);
+INSERT INTO Comic_Compras (cantida, id_compra, id_comic) VALUES (1, 148, 52);
+INSERT INTO Comic_Compras (cantida, id_compra, id_comic) VALUES (2, 151, 54);
+INSERT INTO Comic_Compras (cantida, id_compra, id_comic) VALUES (2, 154, 56);
+INSERT INTO Comic_Compras (cantida, id_compra, id_comic) VALUES (2, 157, 58);
+INSERT INTO Comic_Compras (cantida, id_compra, id_comic) VALUES (2, 160, 60);
+INSERT INTO Comic_Compras (cantida, id_compra, id_comic) VALUES (2, 163, 62);
+INSERT INTO Comic_Compras (cantida, id_compra, id_comic) VALUES (2, 166, 64);
+INSERT INTO Comic_Compras (cantida, id_compra, id_comic) VALUES (0, 169, 66);
+INSERT INTO Comic_Compras (cantida, id_compra, id_comic) VALUES (0, 172, 68);

@@ -36,3 +36,4 @@ Create table Comic_Compras(
 		FOREIGN KEY (id_comic) REFERENCES Comics(id_comic)
 
 );
+
