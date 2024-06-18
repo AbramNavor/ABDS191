@@ -13,7 +13,7 @@ Create table Comics(
 );
 Create table Compras(
 	id_compra bigint identity(100,3) PRIMARY KEY,
-	id_cliente bigint ,
+	id_cliente bigint,
 	fecha_compra date,
 	total DECIMAL(10,2),
 	FOREIGN KEY (id_cliente) REFERENCES Clientes(id_clientes),

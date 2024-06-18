@@ -9,5 +9,6 @@ cm.total
 FROM Comic_Compras cc 
 Left JOIN Comics c ON cc.id_comic = c.id_comic
 LEFT JOIN Compras cm ON cc.id_compra = cm.id_compra;
-select*from VISTA_ClientesCompras;
+
+select*from VISTA_ComprasComic2;
 
