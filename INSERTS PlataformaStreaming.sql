@@ -35,6 +35,8 @@ VALUES
 (6, '2024-06-01', '2025-05-31', 'Premium'),
 (7, '2024-07-01', '2025-06-30', 'Básica');
 
+select*from Suscripciones;
+
 select*from HistorialVisualizacion;
 
 INSERT INTO HistorialVisualizacion (UsuarioID, PeliculaID, FechaVisualizacion)
