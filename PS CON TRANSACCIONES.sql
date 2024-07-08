@@ -103,7 +103,7 @@ begin transaction
 		END CATCH
 end;
 
-exec sp_CambiarCorreoTipoSuscripcion 14, 'samveytia6@gmail.com', 'Premium'
+exec sp_CambiarCorreoTipoSuscripcion 7, 'cambiando.jorge.ramirezexample.com', 'Premium'
 
 select * from Usuarios
 select * from Suscripciones
@@ -116,13 +116,9 @@ BEGIN
     BEGIN TRANSACTION;
 
     BEGIN TRY
-        -- Eliminar primero del HistorialVisualizacion para mantener la integridad referencial
-        DELETE FROM HistorialVisualizacion
-        WHERE PeliculaID = @PeliculaID;
+        DELETE FROM HistorialVisualizacion WHERE PeliculaID = @PeliculaID;
 
-        -- Luego eliminar de la tabla Peliculas
-        DELETE FROM Peliculas
-        WHERE PeliculaID = @PeliculaID;
+        DELETE FROM Peliculas WHERE PeliculaID = @PeliculaID;
 
         COMMIT TRANSACTION;
     END TRY
@@ -133,3 +129,36 @@ BEGIN
         PRINT 'Error: ' + @ErrorMessage;
     END CATCH
 END;
+
+exec sp_EliminarPeliculaHistorial 1;
+
+select*from Peliculas;
+select*from HistorialVisualizacion
+---------------------
+--Crea un procedimiento que Elimine un usuario con todas sus suscripciones y registros en historial de visualización
+CREATE PROCEDURE sp_EliminarUsuarioHistorial
+    @UsuarioID INT
+AS
+BEGIN
+    BEGIN TRANSACTION;
+    BEGIN TRY
+        DELETE FROM HistorialVisualizacion WHERE UsuarioID = @UsuarioID;
+
+        DELETE FROM Suscripciones WHERE UsuarioID = @UsuarioID;
+
+        DELETE FROM Usuarios WHERE UsuarioID = @UsuarioID;
+
+        COMMIT TRANSACTION;
+    END TRY
+    BEGIN CATCH
+        ROLLBACK TRANSACTION;
+        DECLARE @ErrorMessage NVARCHAR(4000);
+        SET @ErrorMessage = ERROR_MESSAGE();
+        PRINT 'Error: ' + @ErrorMessage;
+    END CATCH
+END;
+
+EXEC sp_EliminarUsuarioHistorial 2;
+
+select*from Usuarios;
+select*from HistorialVisualizacion;
